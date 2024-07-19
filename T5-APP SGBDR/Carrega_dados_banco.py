@@ -90,9 +90,11 @@ class APP:
 
 def main():
     """Não esqueça de inserir a senha e user corretos para conectar ao banco de dados"""
-
+    host = input(f'Insira seu host: ')  # Comum é localhost
+    user = input(f'Insira seu user: ')  # Comum é root
+    password = input(f'Insira sua senha: ')
     app = APP(filepath='Dados/perfil_eleitorado_ATUAL.csv',
-              password='', host='localhost', user='root')
+              password=password, host=host, user=user)
     app.pre_processamento()
     app.faz_conexao()
     app.carrega_dados()
